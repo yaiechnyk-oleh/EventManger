@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: event_manager
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
+    environment:
+      # Override host to point to the db service in this compose network
+      DATABASE_URL: postgres://postgres:postgres@db:5432/event_manager?schema=public
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
