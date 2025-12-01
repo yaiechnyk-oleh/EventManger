@@ -13,6 +13,8 @@ async function main() {
                 date: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
                 location: 'Lviv, Ukraine',
                 category: 'Tech',
+                latitude: 32.8397,
+                longitude: 54.0297,
             },
             {
                 title: 'Jazz Night',
@@ -20,6 +22,8 @@ async function main() {
                 date: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
                 location: 'Lviv, Ukraine',
                 category: 'Music',
+                latitude: 49.8397,
+                longitude: 24.0297,
             },
             {
                 title: 'Football Match',
@@ -27,6 +31,8 @@ async function main() {
                 date: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000),
                 location: 'Lviv, Ukraine',
                 category: 'Sport',
+                latitude: 59.8397,
+                longitude: 21.0297,
             },
             {
                 title: 'NodeJS Workshop',
@@ -34,6 +40,8 @@ async function main() {
                 date: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000),
                 location: 'Lviv, Ukraine',
                 category: 'Tech',
+                latitude: 69.8397,
+                longitude: 14.0297,
             },
         ],
     });
